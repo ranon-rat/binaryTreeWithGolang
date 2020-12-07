@@ -21,20 +21,16 @@ func (n *node) printNodes() {
 }
 
 func (n *node) insert(number [][]int) {
-
-	for p, nl := range number {
-
-		if nl[1] >= 1 {
-			n.left = &node{val: nl[0]}
-			n.left.insert(number[:len(number)-(p+1)])
+	if len(number) >= 1 {
+		if number[0][1] >= 1 {
+			n.left = &node{val: number[0][0]}
+			n.left.insert(number[1:])
 		}
-		if nl[2] >= 1 {
-			n.right = &node{val: nl[0]}
-			n.right.insert(number[:len(number)-(p+1)])
+		if number[0][2] >= 1 {
+			n.right = &node{val: number[0][0]}
+			n.right.insert(number[1:])
 		}
-
 	}
-
 }
 
 func main() {
