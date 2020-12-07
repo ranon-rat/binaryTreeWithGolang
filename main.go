@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math/rand"
+)
 
 type node struct {
 	val   int
@@ -9,7 +12,6 @@ type node struct {
 }
 
 func (n *node) printNodes() {
-
 	if n.left != nil {
 		fmt.Println("left ", n.left)
 		n.left.printNodes()
@@ -36,9 +38,15 @@ func (n *node) insert(number [][]int) {
 func main() {
 	var t *node = &node{}
 	var n [][]int = [][]int{
-		{1, 3, 1},
-		{2, 2, 0},
-		{3, 0, 3},
+		{rand.Intn(20+10) - 10, rand.Intn(15+10) - 10, rand.Intn(15+10) - 10},
+		{rand.Intn(20+10) - 10, rand.Intn(15+10) - 10, rand.Intn(15+10) - 10},
+		{rand.Intn(20+10) - 10, rand.Intn(15+10) - 10, rand.Intn(15+10) - 10},
+		{rand.Intn(20+10) - 10, rand.Intn(15+10) - 10, rand.Intn(15+10) - 10},
+		{rand.Intn(20+10) - 10, rand.Intn(15+10) - 10, rand.Intn(15+10) - 10},
+		{rand.Intn(20+10) - 10, rand.Intn(15+10) - 10, rand.Intn(15+10) - 10},
+		{rand.Intn(20+10) - 10, rand.Intn(15+10) - 10, rand.Intn(15+10) - 10},
+		{rand.Intn(20+10) - 10, rand.Intn(15+10) - 10, rand.Intn(15+10) - 10},
+		{rand.Intn(20+10) - 10, rand.Intn(15+10) - 10, rand.Intn(15+10) - 10},
 	}
 	t.insert(n)
 	t.printNodes()
