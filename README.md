@@ -1,2 +1,2 @@
-# graphsWithGolang
+# binaryTree
 this is for practice
